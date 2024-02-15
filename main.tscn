@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfqb4gua36x15"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_6ipm8"]
+[ext_resource type="PackedScene" uid="uid://qu67kulfo4ot" path="res://snake/food.tscn" id="3_45y8b"]
+[ext_resource type="PackedScene" uid="uid://bdvw36y4llaq1" path="res://snake/snake.tscn" id="3_qk0xl"]
+
+[node name="main" type="Node"]
+script = ExtResource("1_6ipm8")
+snake = ExtResource("3_qk0xl")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Food" parent="." instance=ExtResource("3_45y8b")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="eated" from="Food" to="." method="_on_food_eated"]

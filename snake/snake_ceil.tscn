@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdvdf5yxjymad"]
+
+[ext_resource type="Shader" uid="uid://cvk0juvsx80r4" path="res://snake/snake_ceil.tres" id="1_tptqe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_so4uj"]
+shader = ExtResource("1_tptqe")
+
+[sub_resource type="QuadMesh" id="QuadMesh_pph42"]
+size = Vector2(20, 20)
+
+[node name="Ceil" type="MeshInstance2D"]
+material = SubResource("ShaderMaterial_so4uj")
+mesh = SubResource("QuadMesh_pph42")
